@@ -34,7 +34,8 @@ const Tile = styled.div`
   padding: 20px;
   font-size: 150%;
   border: 1px solid #222;
-// `;
+`;
+
 // interface Element {
 //   row: number;
 //   col: number;
