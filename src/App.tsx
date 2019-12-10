@@ -21,10 +21,6 @@ const AppHeader = styled.div`
   color: white;
 `;
 
-// .App-link {
-//   color: #09d3ac;
-// }
-
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -38,22 +34,23 @@ const Tile = styled.div`
   padding: 20px;
   font-size: 150%;
   border: 1px solid #222;
-`;
+// `;
+// interface Element {
+//   row: number;
+//   col: number;
+// }
 
-const BOARD = Array.from({ length: 5 }, () => (
-  Array.from({ length: 5 }, () => true)
+const BOARD = Array.from({ length: 5 }, (_, i) => (
+  Array.from({ length: 5 }, (__, j) => ({ row: i, col: j }))
 ));
 
-let key = 0;
-
 const App: React.FC = () => (
-
   <AppContainer>
     <AppHeader>
       <AppLogo src={logo} alt="logo" />
     </AppHeader>
     <Grid>
-      {BOARD.map((row, i) => row.map((el, j) => <Tile key={key++}>{el ? 1 : 0}</Tile>))}
+      {BOARD.map((row) => row.map((el) => <Tile key={`${el.row}-${el.col}`}>{`${el.row}-${el.col}`}</Tile>))}
     </Grid>
   </AppContainer>
 );
