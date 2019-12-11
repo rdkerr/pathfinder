@@ -1,25 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { render } from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import GlobalStyle from './constants/global';
+import { ThemeManager } from './ThemeManager';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-`;
-
-ReactDOM.render(
-  <ThemeProvider theme={{ }}>
+render(
+  <ThemeManager>
     <GlobalStyle />
     <App />
-  </ThemeProvider>,
+  </ThemeManager>,
   document.getElementById('root'),
 );
 
