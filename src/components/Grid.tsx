@@ -3,6 +3,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import * as themeConf from '../ThemeManager/theme';
 import { useTheme } from '../ThemeManager';
 
+const { medGray } = themeConf.colors;
+
 type GridProps = {
   width: number;
 }
@@ -11,7 +13,7 @@ const GridContainer = styled.div<GridProps>`
   display: grid;
   grid-template-columns: repeat(${(props): number => props.width}, 1fr);
   grid-gap: 10px;
-  background-color: #AAA;
+  background-color: ${medGray};
   height: 90vh;
 `;
 
@@ -20,7 +22,10 @@ const Tile = styled.div`
   color: ${themeConf.textColor};
   padding: 20px;
   font-size: 1em;
-  border: 1px solid #222;
+
+  &:hover {
+    outline: 2px solid ${themeConf.borderColor};
+  }
 `;
 
 type Space = {

@@ -10,7 +10,7 @@ const AppLogo = styled.img`
 `;
 
 const AppHeader = styled.div`
-  background-color: ${themeConf.backgroundColor};
+  background-color: ${themeConf.navColor};
   height: 10vh;
   display: flex;
   flex-direction: row;
