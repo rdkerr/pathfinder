@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 *{
   transition: background-color 0.5s ease-in-out;
+  transition: color 0.5s ease-out;
 }
   body {
     margin: 0;
