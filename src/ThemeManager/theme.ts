@@ -3,6 +3,7 @@ import theme from 'styled-theming';
 export const colors = {
   white: '#fff',
   black: '#000',
+  green: '#33F8B1',
   lightGray: '#eee',
   medGray: '#AAA',
   darkGray: '#4D5656',

@@ -1,9 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCloudMoon, faSun, faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import GlobalStyle from './constants/global';
 import { ThemeManager } from './ThemeManager';
+
+library.add(faCloudMoon, faSun, faSearchLocation);
 
 render(
   <ThemeManager>
