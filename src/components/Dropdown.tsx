@@ -28,7 +28,7 @@ const DropdownContainer = styled.div`
 
 const TextContainer = styled.ul`
   list-style: none;
-  margin: 0;
+  margin: 0 0 4px 0;
   padding: 0;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -40,6 +40,7 @@ const NestedContainer = styled.ul`
   position: absolute;
   padding: 0;
   left: -1px;
+  top: 4px;
   z-index: 2;
   width: 100%;
   border: solid ${themeConf.colors.green};
@@ -50,19 +51,22 @@ const NestedContainer = styled.ul`
 
 const ListElement = styled.li`
   display: block;
-
   position: relative;
   text-decoration: none;
   width: 100%;
+  margin: 0 8px 0 0;
 
   &:hover {
     cursor: pointer;
     background-color: ${themeConf.buttonBackgroundColor};
   }
+  &:nth-child(2) {
+    margin-right: 20px;
+  }
 `;
 
 const Title = styled.span`
-  margin-right: 16px;
+  margin: 12px 8px 12px 16px;
 `;
 
 const Dropdown: React.FC = () => {
