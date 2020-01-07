@@ -1,10 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-*{
-  transition: all 0.5s ease-in-out;
-
-}
   body {
     margin: 0;
     padding: 0;

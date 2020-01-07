@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Dropdown from './Dropdown';
 import ToggleButton from './ToggleButton';
 import * as themeConf from '../ThemeManager/theme';
 import { useTheme } from '../ThemeManager';
@@ -24,8 +25,7 @@ const AppHeader = styled.header`
   & > span:hover {
     color: ${themeConf.colors.green}
     cursor: pointer;
-    border: 1px solid ${themeConf.colors.green};
-    border-radius: 3px;
+    box-shadow: 0 0 0 1px ${themeConf.colors.green} inset;
   }
 `;
 
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
           size="lg"
           color={themeConf.colors.green}
         />
-        <span>Algorithm</span>
+        <Dropdown />
         <span>Maze</span>
         <span>Cookie</span>
         <span>Clear</span>

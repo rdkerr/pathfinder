@@ -1,4 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, {
+  ReactNode, createContext, useState, FC,
+} from 'react';
 
 const defaultMode = 'dark';
 
@@ -11,15 +13,15 @@ type Props = {
   children: ReactNode;
 }
 
-export const ManageThemeContext: React.Context<ThemeContext> = React.createContext({
+export const ManageThemeContext: React.Context<ThemeContext> = createContext({
   mode: defaultMode,
   toggle: () => { },
 });
 
 export const useTheme = (): ThemeContext => React.useContext(ManageThemeContext);
 
-export const ThemeManager: React.FC<Props> = ({ children }) => {
-  const [themeState, setThemeState] = React.useState({
+export const ThemeManager: FC<Props> = ({ children }) => {
+  const [themeState, setThemeState] = useState({
     mode: defaultMode,
   });
 
